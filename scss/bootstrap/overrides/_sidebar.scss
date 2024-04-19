@@ -1,0 +1,62 @@
+@import '../basics.scss';
+#sidebar {
+  background: var(--dci-drk-blue, #003049);
+  color: var(--dci-nav-text-grey, #9c9c9c);
+  overflow-y: auto;
+  height: 100%;
+}
+#sidebarCollapse {
+  background-color: transparent;
+  color: var(--dci-drk-blue, #003049);
+}
+/* remove the annoying border box around side-items (o-o-t-b effect)*/
+.nav-item-side > div[ngbdropdown] {
+  :focus-visible {
+    border: transparent;
+  }
+  :active {
+    border: transparent;
+  }
+}
+div.dropdown-menu.nav-item-side {
+  background-color: inherit;
+}
+.icon-heading.fa-2x {
+  &:hover {
+    color: $dropdown-link-hover-color;
+    background-color: var(--dci-drk-blue, #003049); /* dropdown-menu, issue*/
+  }
+}
+div.dropdown-menu-custom > div.dropdown-submenu-custom > a:not(.active),
+div.dropdown-submenu-custom > div.dropdown-toggle > a:not(.active),
+li.nav-item-side > a:not(.active).nav-item-side > div,
+li.nav-item-side > a:not(.active).nav-link {
+  background-color: var(--dci-drk-blue, #003049);
+  color: var(--dci-nav-text-grey, #9c9c9c);
+  font: inherit;
+  &:hover {
+    color: $dropdown-link-hover-color;
+    background-color: var(--dci-drk-blue, #003049);
+  }
+
+  &:focus-visible {
+    color: transparent;
+  }
+}
+.dropdown-item.active {
+  background-color: var(--dci-dk-active, #013f60);
+}
+nav-item-side.dropdown-toggle::after {
+  display: none;
+}
+
+.icon-heading.active {
+  color: var(--dci-lt-blue, #3da3d3);
+}
+.side-bar-caret {
+  float: right;
+}
+
+.dropdown-menu-custom:has(.active) {
+  @extend .d-block;
+}

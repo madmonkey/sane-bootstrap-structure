@@ -1,0 +1,43 @@
+@import "../basics.scss";
+
+#applicationNavbar {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0px; //<--ignore warning that px is redundant (for IE)
+}
+
+abp-nav-items button.dropdown-item, abp-nav-items a.dropdown-item {
+  &:hover, &:focus {
+    color: black;
+    text-decoration-color: black;
+  }
+}
+abp-layout-account #main-navbar div.container-fluid div div abp-languages div div button {
+  /* color: var(--dci-nav-text-grey, #9C9C9C); */
+  color: var(--bs-light);
+  background-color: transparent;
+  border-color: var(--bs-btn-active-border-color);
+  margin-right: 1rem;
+
+  &:hover {
+    color: var(--bs-dark);
+    background-color: var(--bs-light);
+  }
+}
+.navbar-toggler {
+  margin-right: 1rem;
+}
+abp-layout-account #main-navbar div.container-fluid div div abp-languages div div button.dropdown-item {
+  /* color: var(--dci-nav-text-grey, #9C9C9C); */
+  color: black;
+  background-color: transparent;
+  border-color: var(--bs-btn-active-border-color);
+  text-align: end;
+
+}
+@media only screen and (min-width: 768px) {
+  abp-current-user {
+    min-width: 165px;
+    text-align: end;
+  }
+}

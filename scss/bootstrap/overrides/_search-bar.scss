@@ -1,0 +1,70 @@
+@import '../basics.scss';
+
+.filters-row {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+
+  p {
+    margin-right: 20px;
+    margin-bottom: 0;
+  }
+
+  input {
+    margin-bottom: 0;
+  }
+
+  .search-input-with-icon {
+    position: relative;
+    width: 40em;
+
+    input {
+      padding-left: 30px;
+      padding-right: 40px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .input-with-icon {
+      position: relative;
+
+      i {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        transform: translateY(-50%);
+        font-size: 16px;
+        color: #3c3c3c;
+      }
+    }
+
+    .fa-circle-xmark {
+      position: absolute;
+      top: 50%;
+      right: 2px;
+      transform: translateY(-50%);
+      font-size: 16px;
+      cursor: pointer;
+      color: #9c9c9c;
+    }
+  }
+
+  .fa-filter {
+    color: #9c9c9c;
+    padding-left: 10px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+}
+/* more generalized input control w. search-input & w.icon */
+input.search-input.search-input-with-icon {
+  padding-left: 30px;
+}
+/* in addition to the control being validated - should set class.is-invalid for icon used */
+.p-input-icon-left > i.is-invalid {
+  top: 30% !important; //<-- the internal abp validation styling throws off styling
+}
+
+button.search-button-right {
+  margin-left: auto;
+}
